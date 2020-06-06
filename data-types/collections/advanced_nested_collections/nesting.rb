@@ -1,4 +1,4 @@
-def stores 
+def stores
   {
     olive_garden: {
       employees: ['Jeff', 'Zach', 'Samantha'],
@@ -42,5 +42,11 @@ def stores
                 price: 2}
               ]
             }
-  } 
+  }
+
+
 end
+
+
+# require 'pry'; binding.pry
+stores
