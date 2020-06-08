@@ -44,13 +44,13 @@ __Recommended Exercise Order__
 
 You should perform the exercises in the order below:
 
-* `map`
-* `select`
-* `find` (aka `detect`)
-* `sort_by`
+* `map` done
+* `select` done
+* `find` (aka `detect`) done
+* `sort_by` done
 * `count`
 * `reject`
-* `reduce`
+* `reduce` done
 * `any?`
 * `all?`
 * `none?`
