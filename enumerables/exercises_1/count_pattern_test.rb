@@ -14,6 +14,7 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_count_numbers_greater_than_17
+    skip
     numbers = [9, 18, 12, 17, 1, 3, 99]
     tally = 0
     numbers.each do |number|
@@ -23,10 +24,11 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_count_words_that_are_uppercase
-    skip
     words = ["trousers", "SOCKS", "sweater", "Cap", "SHOE", "TIE"]
     tally = 0
-    # Your code goes here
+    words.each do |word|
+      tally += 1 if word.upcase == word
+    end
     assert_equal 3, tally
   end
 
@@ -38,9 +40,11 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_count_even_numbers
-    skip
     numbers = [9, 2, 1, 3, 18, 39, 71, 4, 6]
-    # Your code goes here
+    tally = 0
+    numbers.each do |number|
+      tally += 1 if number.even?
+    end
     assert_equal 4, tally
   end
 
@@ -52,9 +56,11 @@ class CountPatternTest < Minitest::Test
   end
 
   def test_count_round_prices
-    skip
     prices = [1.0, 3.9, 5.99, 18.5, 20.0]
-    # Your code goes here
+    tally = 0
+    prices.each do |price|
+      tally += 1 if price / price.to_i == 1
+    end
     assert_equal 2, tally
   end
 
