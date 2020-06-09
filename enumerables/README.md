@@ -48,8 +48,8 @@ You should perform the exercises in the order below:
 * `select` done
 * `find` (aka `detect`) done
 * `sort_by` done
-* `count`
-* `reject`
+* `count` *
+* `reject` *
 * `reduce` done
 * `any?`
 * `all?`
