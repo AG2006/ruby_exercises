@@ -14,6 +14,7 @@ class RejectPatternTest < Minitest::Test
   end
 
   def test_remove_vowels
+    skip
     letters = ["a", "l", "l", " ", "y", "o", "u", "r", " ", "b", "a", "s", "e", " ", "a", "r", "e", " ", "b", "e", "l", "o", "n", "g", " ", "t", "o", " ", "u", "s"]
     remaining = []
     letters.each do |letter|
@@ -23,10 +24,13 @@ class RejectPatternTest < Minitest::Test
   end
 
   def test_remove_numbers_divisible_by_3
-    skip
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
     remaining = []
-    # Your code goes here
+    numbers.each do |number|
+      unless number % 3 == 0
+        remaining << number
+      end
+    end
     assert_equal [1, 2, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 20], remaining
   end
 
@@ -38,9 +42,13 @@ class RejectPatternTest < Minitest::Test
   end
 
   def test_remove_words_ending_in_e
-    skip
     words = ["are", "you", "strike", "thinking", "belt", "piece", "warble", "sing", "pipe"]
-    # Your code goes here
+    selected = []
+    words.each do |word|
+      unless word[-1] == 'e'
+        selected << word
+      end
+    end
     assert_equal ["you", "thinking", "belt", "sing"], selected
   end
 
@@ -52,9 +60,13 @@ class RejectPatternTest < Minitest::Test
   end
 
   def test_remove_words_containing_e
-    skip
     words = ["four", "red", "five", "blue", "pizza", "purple"]
-    # Your code goes here
+    selected = []
+    words.each do |word|
+      unless word.include?('e')
+        selected << word
+      end
+    end
     assert_equal ["four", "pizza"], selected
   end
 
@@ -80,9 +92,13 @@ class RejectPatternTest < Minitest::Test
   end
 
   def test_remove_animals_starting_with_vowels
-    skip
     animals = ["aardvark", "bonobo", "cat", "dog", "elephant"]
-    # Your code goes here
+    remaining = []
+    animals.each do |animal|
+      unless animal[0] =~ /[aeiou]/
+        remaining << animal
+      end
+    end
     assert_equal ["bonobo", "cat", "dog"], remaining
   end
 
@@ -101,9 +117,13 @@ class RejectPatternTest < Minitest::Test
   end
 
   def test_remove_hashes
-    skip
     elements = ["cat", {:dog=>"fido"}, 23, {:stuff=>"things"}, "aimless", 43]
-    # Your code goes here
+    remaining = []
+    elements.each do |element|
+      unless element.class == Hash
+        remaining << element
+      end
+    end
     assert_equal ["cat", 23, "aimless", 43], remaining
   end
 
