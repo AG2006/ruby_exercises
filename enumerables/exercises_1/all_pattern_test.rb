@@ -17,16 +17,17 @@ class AllPatternTest < Minitest::Test
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = true
     numbers.each do |number|
-      # Your code goes here
+      all_zeros false unless number.zero?
     end
     refute all_zeros
   end
 
   def test_all_gone
-    skip
     words = ["gone", "gone", "gone", "gone", "gone", "gone", "gone"]
     all_gone = true
-    # Your code goes here
+    words.each do |word|
+      all_gone = false unless word = "gone"
+    end
     assert all_gone
   end
 
@@ -80,9 +81,8 @@ class AllPatternTest < Minitest::Test
   end
 
   def test_all_4_letter_words
-    skip
     words = ["love", "hate", "fire", "bird", "call"]
-    # Your code goes here
+    all_4_letters = words.all? { |word| word.length == 4}
     assert all_4_letters
   end
 

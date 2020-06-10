@@ -51,8 +51,8 @@ You should perform the exercises in the order below:
 * `count` *
 * `reject` *
 * `reduce` done
-* `any?`
-* `all?`
+* `any?`*
+* `all?`*
 * `none?`
 * `one?`
 * `group_by`

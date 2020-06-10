@@ -15,7 +15,7 @@ class AllTest < Minitest::Test
   def test_not_all_zeros
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = numbers.all? do |number|
-      # Your code goes here
+      number.zero?
     end
     refute all_zeros
   end
@@ -77,9 +77,8 @@ class AllTest < Minitest::Test
   end
 
   def test_all_4_letter_words
-    skip
     words = ["love", "hate", "fire", "bird", "call"]
-    # Your code goes here
+    all_4_letters = words.all? { |word| word.length == 4 }
     assert all_4_letters
   end
 

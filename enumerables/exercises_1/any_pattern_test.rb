@@ -17,16 +17,23 @@ class AnyPatternTest < Minitest::Test
     numbers = [3, 1, 3, 2, 4, 9, 8]
     has_zero = false
     numbers.each do |number|
-      # Your code goes here
+      if number == 0
+        has_number = true
+        break
+      end
     end
     refute has_zero
   end
 
   def test_has_at_least_one_alice
-    skip
     names = ["Bill", "Bob", "Burton", "Alice", "Brandon"]
     has_alice = false
-    # Your code goes here
+    names.each do |name|
+      if name == 'Alice'
+        has_alice = true
+        break
+      end
+    end
     assert has_alice
   end
 
@@ -38,9 +45,11 @@ class AnyPatternTest < Minitest::Test
   end
 
   def test_has_a_multi_word_phrase
-    skip
     phrases = ["Sure!", "OK.", "I have no idea.", "Really?Whatever."]
-    # Your code goes here
+    has_multi_word_phrase = false
+    phrases.each do |phrase|
+      has_multi_word_phrase = true if phrase.split.size > 1
+    end
     assert has_multi_word_phrase
   end
 
